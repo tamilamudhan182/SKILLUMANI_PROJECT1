@@ -1,0 +1,271 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #10243e;
+  background:
+    radial-gradient(circle at top left, rgba(255, 215, 157, 0.7), transparent 35%),
+    linear-gradient(135deg, #fff8ef 0%, #f4f7fb 45%, #dce9f7 100%);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.auth-page,
+.dashboard-page,
+.page-shell {
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.auth-panel,
+.dashboard-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.auth-panel {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+}
+
+.auth-form,
+.card,
+.task-form {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(16, 36, 62, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(27, 56, 96, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.auth-form,
+.task-form,
+.card {
+  padding: 24px;
+}
+
+.auth-form,
+.task-form {
+  display: grid;
+  gap: 16px;
+}
+
+.auth-form label,
+.task-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.auth-form input,
+.task-form input,
+.task-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(16, 36, 62, 0.12);
+  background: #fff;
+}
+
+.primary-button,
+.ghost-button,
+.danger-button,
+.filter-button,
+.text-button {
+  border: none;
+  border-radius: 999px;
+  padding: 11px 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #ff8f3d, #ff5d5d);
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(255, 93, 93, 0.25);
+}
+
+.ghost-button,
+.filter-button {
+  background: #edf3fb;
+  color: #10243e;
+}
+
+.danger-button {
+  background: #ffe3e3;
+  color: #a12d2d;
+}
+
+.text-button {
+  padding: 0;
+  background: none;
+  color: #2559a7;
+  justify-self: start;
+}
+
+.primary-button:hover,
+.ghost-button:hover,
+.danger-button:hover,
+.filter-button:hover {
+  transform: translateY(-1px);
+}
+
+.dashboard-header,
+.toolbar,
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.dashboard-page {
+  display: grid;
+  gap: 24px;
+}
+
+.tasks-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #ff6b4a;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.auth-copy,
+.muted-text {
+  color: #4b607d;
+}
+
+.filter-group,
+.actions-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-button.active {
+  background: #10243e;
+  color: #fff;
+}
+
+.task-table-wrapper {
+  overflow-x: auto;
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th,
+.task-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid rgba(16, 36, 62, 0.08);
+  text-align: left;
+  vertical-align: top;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.status-pill.pending {
+  background: #fff3d6;
+  color: #956300;
+}
+
+.status-pill.complete {
+  background: #dff7e8;
+  color: #1b7a44;
+}
+
+.error-message,
+.error-banner {
+  color: #a12d2d;
+}
+
+.error-banner {
+  margin: 0;
+  padding: 14px 16px;
+  background: #ffeaea;
+  border-radius: 16px;
+}
+
+.empty-state {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .auth-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header,
+  .toolbar,
+  .form-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .auth-page,
+  .dashboard-page,
+  .page-shell {
+    padding: 16px;
+  }
+
+  .task-table th,
+  .task-table td {
+    min-width: 140px;
+  }
+}
